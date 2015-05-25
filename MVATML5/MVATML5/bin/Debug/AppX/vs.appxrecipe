@@ -47,7 +47,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\O_oDanilo\Documents\GitHub\MVA-win8.1\MVATML5\MVATML5\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2015-05-25T16:01:38.311</Modified>
+      <Modified>2015-05-25T16:27:15.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\O_oDanilo\Documents\GitHub\MVA-win8.1\MVATML5\MVATML5\css\default.css">
       <PackagePath>css\default.css</PackagePath>

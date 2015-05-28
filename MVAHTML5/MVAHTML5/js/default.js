@@ -17,12 +17,22 @@
             element.wincontrol = this;
         }),
 
+        // associação de páginas ao código
+        PaginaPadrao: WinJS.UI.Pages.define("/PaginaConteudo.html", {
+            processed: function (element, option) {
+                element.style.background = "cyan";
+            }
+        }),
+
+      
+
         //elemento visual
         model: WinJS.Binding.as({
             hora: new Date().toLocaleTimeString()
 
         })
 
+   
     });
 
     app.onactivated = function (e) {
@@ -43,6 +53,9 @@
         }, 250);
 
         WinJS.UI.processAll();
+
+        //NAVEGAÇÃO PARA SEGUNDA PÁGINA
+        WinJS.UI.Pages.render("/PaginaConteudo.html", document.body);
     };
 
     app.start();
@@ -53,5 +66,5 @@
 
 
 
-// encapsulamento e cóigo java script ()
+    // encapsulamento e cóigo java script ()
 })();

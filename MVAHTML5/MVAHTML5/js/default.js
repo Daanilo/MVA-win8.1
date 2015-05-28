@@ -2,8 +2,10 @@
     //modo estrito evita erros variados como não declarar uma variável
     "use  strict";
 
-    //apelidamos o objeto WinJS só pra facilitar a digitação
+    //apelidamos o objeto WinJS.Application só pra facilitar a digitação
     var app = WinJS.Application;
+    //apelidamos o objeto WinJS.Navigation só pra facilitar a digitação -- Referência nav
+    var nav = WinJS.Navigation;
 
     //Definir o Namespace  
     WinJS.Namespace.define("MVAHTML5", {
@@ -24,7 +26,7 @@
             }
         }),
 
-      
+
 
         //elemento visual
         model: WinJS.Binding.as({
@@ -32,11 +34,32 @@
 
         })
 
-   
+
     });
+
+    // definir evento nav através da função
+    nav.onnavigating = function navigating(args) {
+        var location = args.detail.location;
+        var state = args.detail.state;
+        //limpar informações do DivConteudo
+        DivConteudo.textContent = "";
+
+        WinJS.UI.Pages.render(location, DivConteudo, state).then(function () {
+            WinJS.Utilities.query("a", DivConteudo).listen("click", function (e) {
+                nav.navigate(e.srcElement.href);
+                e.preventDefault();
+            });
+        });
+
+
+
+    };
+
 
     app.onactivated = function (e) {
         var DivPrincipal = MVAHTML5.id("DivPrincipal");
+        var DivConteudo = MVAHTML5.id("DivConteudo");
+
         DivPrincipal.textContent = "Olá mundo MVA HTML5 Windows 8.1!";
         //instanciar a classe texto
         //new MVAHTML5.ClasseTexto(DivPrincipal)
@@ -54,8 +77,11 @@
 
         WinJS.UI.processAll();
 
-        //NAVEGAÇÃO PARA SEGUNDA PÁGINA
-        WinJS.UI.Pages.render("/PaginaConteudo.html", document.body);
+        //NAVEGAÇÃO PARA SEGUNDA PÁGINA no body
+        //WinJS.UI.Pages.render("/PaginaConteudo.html", document.body);
+        //NAVEGAÇÃO PARA SEGUNDA PÁGINA no Div
+        //WinJS.UI.Pages.render("/PaginaConteudo.html", DivConteudo);
+        nav.navigate("/pagina1.html");
     };
 
     app.start();

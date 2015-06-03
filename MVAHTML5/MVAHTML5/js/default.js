@@ -24,16 +24,16 @@
         // associação de páginas ao código
         PaginaPadrao: WinJS.UI.Pages.define("/PaginaConteudo.html", {
             processed: function (element, option) {
-                element.style.background = "cyan";
+                element.style.background = 'cyan';
                 WinJS.Binding.processAll(element, MVAHTML5.model);
 
-                //add robô - acrescentar item no array
-                element.querySelector(".add").onclick = function () {
-                    MVAHTML5.model.pessoas.push({
-                        nome: "Robô" + (++i),
-                        idade: i
-                    })
-                }
+                ////add robô - acrescentar item no array
+                //element.querySelector(".add").onclick = function () {
+                //    MVAHTML5.model.pessoas.push({
+                //        nome: "Robô" + (++i),
+                //        idade: i
+                //    })
+                //}
             }
         }),
 
@@ -57,7 +57,6 @@
 
         //limpar informações do DivConteudo
         DivNav.textContent = "";
-
         WinJS.UI.Pages.render(location, DivNav, state).then(function () {
             WinJS.Utilities.query("a", DivNav).listen("click", function (e) {
                 nav.navigate(e.srcElement.href);
@@ -69,6 +68,15 @@
     app.onactivated = function (e) {
         var DivPrincipal = MVAHTML5.id("DivPrincipal");
         var DivConteudo = MVAHTML5.id("DivConteudo");
+        //add robô - acrescentar item no array
+        document.body.querySelector("#add").onclick = function () {
+            MVAHTML5.model.pessoas.push({
+                nome: "Robô " + (++i),
+                idade: i
+            })
+        }
+
+
         var DivNav = MVAHTML5.id("DivNav");
 
         DivPrincipal.textContent = "Olá mundo MVA HTML5 Windows 8.1!";

@@ -15,8 +15,22 @@
 </head>
 <body>
     <!--data-win-bind="textContent:hora"-->
+    <div id="navBar" data-win-control="WinJS.UI.NavBar">
+        <div data-win-control="WinJS.UI.NavBarContainer">
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{label:'Página 1',location:'/pagina1.html'}"></div>
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{label:'Página 2',location:'/pagina2.html'}"></div>
+        </div>
+    </div>
     <div id="DivPrincipal" data-win-control="MVAHTML5.ClasseTexto" data-win-bind="textContent:hora"></div>
     <div id="DivNav"></div>
     <div id="DivConteudo"></div>
+    <div id="addBar" data-win-control="WinJS.UI.AppBar">
+        <button id="add" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                icon:'add',
+                label: 'Adicionar',
+                tooltip: 'Adicionar mais um robô',
+                section : 'global'}">
+        </button>
+    </div>
 </body>
 </html>

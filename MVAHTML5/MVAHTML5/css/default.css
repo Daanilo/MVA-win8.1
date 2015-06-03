@@ -4,3 +4,9 @@
     background-color: darkgray;
     padding: 10px;
 }
+
+.imgFundo {
+    background-image: url(C:\Users\O_oDanilo\Documents\GitHub\MVA-win8.1\MVAHTML5\MVAHTML5\images\intro.jpg);
+    width: 1400px;
+    height: 500px;
+}

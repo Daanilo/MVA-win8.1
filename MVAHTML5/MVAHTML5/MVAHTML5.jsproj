@@ -48,19 +48,25 @@
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <RequiredPlatformVersion>8.1</RequiredPlatformVersion>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>pt-br</DefaultLanguage>
     <PackageCertificateKeyFile>MVAHTML5_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxBundle>Never</AppxBundle>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="default.html" />
+    <Content Include="images\img150.png" />
+    <Content Include="images\img30.png" />
+    <Content Include="images\img50.png" />
     <Content Include="images\intro.jpg" />
     <Content Include="images\logo.scale-100.png" />
     <Content Include="images\smalllogo.scale-100.png" />
     <Content Include="images\splashscreen.scale-100.png" />
     <Content Include="images\storelogo.scale-100.png" />
+    <Content Include="images\Wide310x150Logo.scale-100.png" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
     <Content Include="pagina1.html" />
